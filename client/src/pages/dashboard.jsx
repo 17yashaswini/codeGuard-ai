@@ -1,4 +1,4 @@
-import { useUser } from '@clerk/clerk-react';
+import { useUser } from '@clerk/react';
 import { useUserContext } from '../context/UserContext';
 import { Link } from 'react-router-dom';
 import { Code2, History, Shield, Zap, ArrowRight, Lock } from 'lucide-react';

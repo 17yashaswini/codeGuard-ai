@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useUser } from '@clerk/clerk-react';
+import { useUser } from '@clerk/react';
 import { Shield, Code2, Zap, ChevronRight, Cpu, GitBranch } from 'lucide-react';
 
 const Home = () => {

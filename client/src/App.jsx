@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useUser, SignIn, SignUp } from '@clerk/clerk-react';
+import { useUser, SignIn, SignUp } from '@clerk/react';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Analyze from './pages/Analyze';

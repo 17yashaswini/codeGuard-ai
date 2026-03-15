@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { UserButton } from '@clerk/clerk-react';
+import { UserButton } from '@clerk/react';
 import { useUserContext } from '../context/UserContext';
 import { LayoutDashboard, Code2, History, Shield, Zap } from 'lucide-react';
 

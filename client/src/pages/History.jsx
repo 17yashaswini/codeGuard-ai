@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useAuth } from '@clerk/clerk-react';
+import { useAuth } from '@clerk/react';
 import axiosInstance from '../lib/axios';
 import { History as HistoryIcon, Code2, Clock, AlertTriangle, CheckCircle, ChevronRight } from 'lucide-react';
 
