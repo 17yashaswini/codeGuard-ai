@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useUser, SignIn, SignUp } from '@clerk/clerk-react';
 import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/dashboard';
 import Analyze from './pages/Analyze';
 import History from './pages/History';
 import Layout from './pages/Layout';
