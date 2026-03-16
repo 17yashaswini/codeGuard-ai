@@ -15,19 +15,6 @@
 
 ---
 
-## 📸 Screenshots
-
-### 🏠 Landing Page
-![Landing Page](https://via.placeholder.com/800x400/050810/60a5fa?text=CodeGuard+AI+Landing+Page)
-
-### 📊 Dashboard
-![Dashboard](https://via.placeholder.com/800x400/050810/60a5fa?text=User+Dashboard)
-
-### 🔍 Code Analysis
-![Analysis](https://via.placeholder.com/800x400/050810/60a5fa?text=AI+Code+Analysis)
-
----
-
 ## ✨ Features
 
 - 🔐 **Security Vulnerability Detection** — SQL Injection, XSS, CSRF, insecure APIs and 50+ vulnerability types
