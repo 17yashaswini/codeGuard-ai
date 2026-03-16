@@ -11,7 +11,7 @@
 
 ## 🚀 Live Demo
 
-🌐 **[Try CodeGuard AI Live →]([https://codeguard-ai.vercel.app](https://code-guard-ai-seven.vercel.app/))**
+🌐 **[Try CodeGuard AI Live →](https://code-guard-ai-seven.vercel.app)**
 
 ---
 
