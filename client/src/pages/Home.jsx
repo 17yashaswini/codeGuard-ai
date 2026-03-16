@@ -40,7 +40,7 @@ const Home = () => {
         <div className="opacity-0 animate-fade-in-up" style={{animationDelay:'0.1s', animationFillMode:'forwards'}}>
           <span className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 px-4 py-2 rounded-full text-sm font-medium mb-10">
             <Cpu size={14} />
-            Powered by Google Gemini AI
+           
           </span>
         </div>
 
