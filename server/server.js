@@ -7,6 +7,8 @@ import { clerkMiddleware } from '@clerk/express';
 import connectDB from './config/db.js';
 import aiRoutes from './routes/aiRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
+import paymentRoutes from './routes/paymentRoutes.js';
 
 const app = express();
 
@@ -21,6 +23,9 @@ connectDB();
 
 app.use('/api/ai', aiRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/payment', paymentRoutes);
+
 
 app.get('/', (req, res) => res.send('CodeGuard AI Server Running 🚀'));
 

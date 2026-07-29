@@ -1,25 +1,25 @@
 import { Link, useLocation } from 'react-router-dom';
 import { UserButton } from '@clerk/react';
 import { useUserContext } from '../context/UserContext';
-import { LayoutDashboard, Code2, History, Shield, Zap } from 'lucide-react';
+import { LayoutDashboard, Code2, History, Shield, Zap, CreditCard } from 'lucide-react';
 
 const Layout = ({ children }) => {
   const { credits } = useUserContext();
   const location = useLocation();
 
   const navItems = [
-    { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { path: '/analyze', label: 'Analyze Code', icon: Code2 },
-    { path: '/history', label: 'History', icon: History },
-  ];
+  { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/analyze', label: 'Analyze Code', icon: Code2 },
+  { path: '/history', label: 'History', icon: History },
+  { path: '/buy-credits', label: 'Buy Credits', icon: CreditCard },
+  { path: '/admin', label: 'Admin', icon: Shield },
+];
 
   return (
     <div style={{display: 'flex', minHeight: '100vh', background: '#050810', color: 'white'}}>
 
-      {/* Background grid */}
       <div className="fixed inset-0 grid-bg opacity-40 pointer-events-none" />
 
-      {/* Sidebar */}
       <aside style={{
         position: 'relative', zIndex: 10, width: '260px', display: 'flex',
         flexDirection: 'column', borderRight: '1px solid rgba(255,255,255,0.05)',

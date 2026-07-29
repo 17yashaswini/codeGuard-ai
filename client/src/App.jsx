@@ -1,3 +1,5 @@
+import BuyCredits from './pages/BuyCredits';
+import Admin from './pages/Admin';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useUser, SignIn, SignUp } from '@clerk/react';
 import Home from './pages/Home';
@@ -18,6 +20,13 @@ const ProtectedRoute = ({ children }) => {
 const App = () => {
   return (
     <Routes>
+      <Route path="/admin" element={
+  <ProtectedRoute>
+    <Layout>
+      <Admin />
+    </Layout>
+  </ProtectedRoute>
+} />
       <Route path="/" element={<Home />} />
       <Route path="/sign-in/*" element={<SignIn routing="path" path="/sign-in" />} />
       <Route path="/sign-up/*" element={<SignUp routing="path" path="/sign-up" />} />
@@ -35,6 +44,13 @@ const App = () => {
           </Layout>
         </ProtectedRoute>
       } />
+      <Route path="/buy-credits" element={
+  <ProtectedRoute>
+    <Layout>
+      <BuyCredits />
+    </Layout>
+  </ProtectedRoute>
+} />
       <Route path="/history" element={
         <ProtectedRoute>
           <Layout>

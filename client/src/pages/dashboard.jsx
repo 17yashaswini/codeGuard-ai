@@ -1,7 +1,7 @@
 import { useUser } from '@clerk/react';
 import { useUserContext } from '../context/UserContext';
 import { Link } from 'react-router-dom';
-import { Code2, History, Shield, Zap, ArrowRight, Lock } from 'lucide-react';
+import { Code2, History, Shield, Zap, ArrowRight, Lock, CreditCard } from 'lucide-react';
 
 const Dashboard = () => {
   const { user } = useUser();
@@ -22,17 +22,22 @@ const Dashboard = () => {
       {/* Stats */}
       <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '3.5rem'}}>
         {[
-          { icon: Zap, label: 'Credits Left', value: credits, sub: 'of 5 free', color: '#60a5fa', bg: 'rgba(59,130,246,0.08)', border: 'rgba(59,130,246,0.2)' },
+          { icon: Zap, label: 'Credits Left', value: credits, sub: 'of 5 free', color: '#60a5fa', bg: 'rgba(59,130,246,0.08)', border: 'rgba(59,130,246,0.2)', showBuy: true },
           { icon: Shield, label: 'Plan', value: 'Free', sub: '5 analyses included', color: '#34d399', bg: 'rgba(52,211,153,0.08)', border: 'rgba(52,211,153,0.2)' },
           { icon: Code2, label: 'Languages', value: '10+', sub: 'supported', color: '#a78bfa', bg: 'rgba(167,139,250,0.08)', border: 'rgba(167,139,250,0.2)' },
-        ].map(({ icon: Icon, label, value, sub, color, bg, border }) => (
-          <div key={label} style={{background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '1rem', padding: '2rem'}}>
+        ].map(({ icon: Icon, label, value, sub, color, bg, border, showBuy }) => (
+          <div key={label} style={{background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '1rem', padding: '2rem', position: 'relative'}}>
             <div style={{width: '2.5rem', height: '2.5rem', borderRadius: '0.75rem', background: bg, border: `1px solid ${border}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem'}}>
               <Icon size={18} style={{color}} />
             </div>
             <div style={{fontSize: '2.5rem', fontWeight: 900, color, marginBottom: '0.5rem', fontFamily: 'Syne, sans-serif'}}>{value}</div>
             <div style={{fontSize: '0.875rem', color: '#9ca3af'}}>{label}</div>
             <div style={{fontSize: '0.75rem', color: '#6b7280', marginTop: '0.25rem'}}>{sub}</div>
+            {showBuy && (
+              <Link to="/buy-credits" style={{position: 'absolute', top: '2rem', right: '2rem', fontSize: '0.75rem', color: '#60a5fa', textDecoration: 'none', fontWeight: 600}}>
+                Top up →
+              </Link>
+            )}
           </div>
         ))}
       </div>
@@ -40,10 +45,11 @@ const Dashboard = () => {
       {/* Quick Actions */}
       <div style={{marginBottom: '3.5rem'}}>
         <p style={{fontSize: '0.7rem', fontWeight: 600, color: '#6b7280', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.5rem'}}>Quick Actions</p>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem'}}>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem'}}>
           {[
             { icon: Code2, title: 'Analyze Code', desc: 'Paste code and get instant AI security report', link: '/analyze', gradient: 'linear-gradient(135deg, rgba(37,99,235,0.15), rgba(8,145,178,0.08))', border: 'rgba(59,130,246,0.2)', iconColor: '#60a5fa', iconBg: 'rgba(59,130,246,0.1)' },
             { icon: History, title: 'View History', desc: 'Browse all your past code analyses', link: '/history', gradient: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(219,39,119,0.08))', border: 'rgba(167,139,250,0.2)', iconColor: '#a78bfa', iconBg: 'rgba(167,139,250,0.1)' },
+            { icon: CreditCard, title: 'Buy Credits', desc: 'Top up your account to keep analyzing code', link: '/buy-credits', gradient: 'linear-gradient(135deg, rgba(234,179,8,0.15), rgba(217,119,6,0.08))', border: 'rgba(234,179,8,0.2)', iconColor: '#facc15', iconBg: 'rgba(234,179,8,0.1)' },
           ].map(({ icon: Icon, title, desc, link, gradient, border, iconColor, iconBg }) => (
             <Link key={title} to={link} style={{background: gradient, border: `1px solid ${border}`, borderRadius: '1rem', padding: '2rem', display: 'block', textDecoration: 'none', position: 'relative', transition: 'all 0.2s ease'}}>
               <div style={{width: '3rem', height: '3rem', borderRadius: '0.75rem', background: iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem'}}>
